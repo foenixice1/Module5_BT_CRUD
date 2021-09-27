@@ -18,13 +18,6 @@ export class ProductComponent implements OnInit {
   @Output() createProducts = new EventEmitter<Product>();
   @Output() editProducts = new EventEmitter<Product>();
 
-  // id: number = 0;
-  // name: string = '';
-  // user: string = '';
-  // passWord: string = '';
-  // birthDay: string = '';
-  // gender: string = '';
-  // address: string = '';
 
 
   constructor() {
@@ -44,16 +37,10 @@ export class ProductComponent implements OnInit {
 
   createProduct() {
    this.createProducts.emit(this.validateProduct.value)
-    // this.id = 0;
-    // this.name = '';
-    // this.user = '';
-    // this.passWord = '';
-    // this.birthDay = '';
-    // this.gender = '';
-    // this.address = '';
+    this.validateProduct.reset();
   }
 
-  showEdit(id: any) {
+  showEdit(id: number) {
     for (let i = 0; i < this.products.length; i++) {
       if (this.products[i].id === id) {
         this.validateProduct.get('id')?.setValue(this.products[i].id);
@@ -74,6 +61,7 @@ export class ProductComponent implements OnInit {
 
   submitEdit() {
     this.editProducts.emit(this.validateProduct.value)
+    this.validateProduct.reset();
   }
 
 }

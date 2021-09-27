@@ -147,115 +147,116 @@
         </div>
       </div>
     </div>
+  </div>
 
 
-    <!-- The Modal Edit -->
+  <!-- The Modal Edit -->
 
-    <div class="modal" id="myModalEdit">
-      <div class="modal-dialog">
-        <div class="modal-content">
+  <div class="modal" id="myModalEdit">
+    <div class="modal-dialog">
+      <div class="modal-content">
 
-          <!-- Modal Header -->
-          <div class="modal-header">
-            <h4 class="modal-title">Create Product</h4>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-          </div>
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Create Product</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
 
-          <!-- Modal body -->
-          <div class="col-md-6">
-            <form [formGroup]="validateProduct">
-              <div class="form-control-row">
-                <label for="example-email-input" class="col-md-4 col-form-label">ID:</label>
-                <div class="col-md-12">
-                  <input type="text" class="form-control" id="example-emailEdit-input" formControlName="id">
-                </div>
+        <!-- Modal body -->
+        <div class="col-md-6">
+          <form [formGroup]="validateProduct">
+            <div class="form-control-row">
+              <label for="example-email-input" class="col-md-4 col-form-label">ID:</label>
+              <div class="col-md-12">
+                <input type="text" class="form-control" id="example-emailEdit-input" formControlName="id">
               </div>
-              <div class="col-md-12 alert alert-danger" role="alert"
-                   *ngIf="validateProduct.get('id')?.errors?.required && validateProduct.get('id')?.touched">
-                ID is required!
-              </div>
-
-              <div class="form-control-row">
-                <label for="example-email-input" class="col-md-4 col-form-label">Name:</label>
-                <div class="col-md-12">
-                  <input type="text" class="form-control" id="example-nameEdit-input" formControlName="name">
-                </div>
-              </div>
-              <div class="col-md-12 alert alert-danger" role="alert"
-                   *ngIf="validateProduct.get('name')?.errors?.required && validateProduct.get('name')?.touched">
-                Name is required!
-              </div>
-              <div *ngIf="validateProduct.get('name')?.errors?.minlength">
-                <p style="color: red">Name must be at least 6 character and Name cannot be a number</p>
-              </div>
-
-              <div class="form-control-row">
-                <label for="example-email-input" class="col-md-4 col-form-label">User:</label>
-                <div class="col-md-12">
-                  <input type="text" class="form-control" id="example-uerEdit-input" formControlName="user">
-                </div>
-              </div>
-              <div class="col-md-12 alert alert-danger" role="alert"
-                   *ngIf="validateProduct.get('user')?.errors?.required && validateProduct.get('user')?.touched">
-                User is required!
-              </div>
-
-              <div class="form-control-row">
-                <label for="example-email-input" class="col-md-4 col-form-label">PassWord:</label>
-                <div class="col-md-12">
-                  <input type="password" class="form-control" id="example-passwordEdit-input"
-                         formControlName="passWord">
-                </div>
-              </div>
-              <div class="col-md-12 alert alert-danger" role="alert"
-                   *ngIf="validateProduct.get('passWord')?.errors?.required && validateProduct.get('passWord')?.touched">
-                User is required!
-              </div>
-              <div *ngIf="validateProduct.get('passWord')?.errors?.minlength">
-                <p style="color: red">PassWord must be at least 6 character</p>
-              </div>
-              <div class="form-control-row">
-                <label for="example-email-input" class="col-md-4 col-form-label">BirthDay:</label>
-                <div class="col-md-12">
-                  <input type="date" class="form-control" id="example-birthDayEdit-input" formControlName="birthDay">
-                </div>
-              </div>
-              <div class="col-md-12 alert alert-danger" role="alert"
-                   *ngIf="validateProduct.get('birthDay')?.errors?.required && validateProduct.get('birthDay')?.touched">
-                BirthDay is required!
-              </div>
-
-              <div class="form-control-row">
-                <label class="col-md-4 col-form-label">Gender:</label>
-                <div class="col-md-12">
-                  <select class="form-control" formControlName="gender">
-                    <option value="Nam">Nam</option>
-                    <option value="Nu">Nữ</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="form-control-row">
-                <label for="example-email-input" class="col-md-4 col-form-label">Address:</label>
-                <div class="col-md-12">
-                  <input type="text" class="form-control" id="example-addressEdit-input" formControlName="address">
-                </div>
-              </div>
-              <div class="col-md-12 alert alert-danger" role="alert"
-                   *ngIf="validateProduct.get('address')?.errors?.required && validateProduct.get('address')?.touched">
-                Address is required!
-              </div>
-            </form>
-            <div class="modal-footer">
-              <button type="button" [disabled]="validateProduct.invalid" (click)="submitEdit()"
-                      class="btn btn-success"
-                      data-dismiss="modal">Edit
-              </button>
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+            <div class="col-md-12 alert alert-danger" role="alert"
+                 *ngIf="validateProduct.get('id')?.errors?.required && validateProduct.get('id')?.touched">
+              ID is required!
             </div>
 
+            <div class="form-control-row">
+              <label for="example-email-input" class="col-md-4 col-form-label">Name:</label>
+              <div class="col-md-12">
+                <input type="text" class="form-control" id="example-nameEdit-input" formControlName="name">
+              </div>
+            </div>
+            <div class="col-md-12 alert alert-danger" role="alert"
+                 *ngIf="validateProduct.get('name')?.errors?.required && validateProduct.get('name')?.touched">
+              Name is required!
+            </div>
+            <div *ngIf="validateProduct.get('name')?.errors?.minlength">
+              <p style="color: red">Name must be at least 6 character and Name cannot be a number</p>
+            </div>
+
+            <div class="form-control-row">
+              <label for="example-email-input" class="col-md-4 col-form-label">User:</label>
+              <div class="col-md-12">
+                <input type="text" class="form-control" id="example-uerEdit-input" formControlName="user">
+              </div>
+            </div>
+            <div class="col-md-12 alert alert-danger" role="alert"
+                 *ngIf="validateProduct.get('user')?.errors?.required && validateProduct.get('user')?.touched">
+              User is required!
+            </div>
+
+            <div class="form-control-row">
+              <label for="example-email-input" class="col-md-4 col-form-label">PassWord:</label>
+              <div class="col-md-12">
+                <input type="password" class="form-control" id="example-passwordEdit-input"
+                       formControlName="passWord">
+              </div>
+            </div>
+            <div class="col-md-12 alert alert-danger" role="alert"
+                 *ngIf="validateProduct.get('passWord')?.errors?.required && validateProduct.get('passWord')?.touched">
+              User is required!
+            </div>
+            <div *ngIf="validateProduct.get('passWord')?.errors?.minlength">
+              <p style="color: red">PassWord must be at least 6 character</p>
+            </div>
+            <div class="form-control-row">
+              <label for="example-email-input" class="col-md-4 col-form-label">BirthDay:</label>
+              <div class="col-md-12">
+                <input type="date" class="form-control" id="example-birthDayEdit-input" formControlName="birthDay">
+              </div>
+            </div>
+            <div class="col-md-12 alert alert-danger" role="alert"
+                 *ngIf="validateProduct.get('birthDay')?.errors?.required && validateProduct.get('birthDay')?.touched">
+              BirthDay is required!
+            </div>
+
+            <div class="form-control-row">
+              <label class="col-md-4 col-form-label">Gender:</label>
+              <div class="col-md-12">
+                <select class="form-control" formControlName="gender">
+                  <option value="Nam">Nam</option>
+                  <option value="Nu">Nữ</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-control-row">
+              <label for="example-email-input" class="col-md-4 col-form-label">Address:</label>
+              <div class="col-md-12">
+                <input type="text" class="form-control" id="example-addressEdit-input" formControlName="address">
+              </div>
+            </div>
+            <div class="col-md-12 alert alert-danger" role="alert"
+                 *ngIf="validateProduct.get('address')?.errors?.required && validateProduct.get('address')?.touched">
+              Address is required!
+            </div>
+          </form>
+          <div class="modal-footer">
+            <button type="button" [disabled]="validateProduct.invalid" (click)="submitEdit()"
+                    class="btn btn-success"
+                    data-dismiss="modal">Edit
+            </button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
+
